@@ -28,6 +28,12 @@ app.use(limiter);
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get('/products', async (req, res) => {
+    res.json(
+      formatResponse(null, 'products', 'There are available products'),
+    );
+});
+
 app.get('/', async (req, res) => {
     res.json(
         formatResponse(null, await Result.find(), null),
