@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 
 app.get('/products', async (req, res) => {
     res.json(
-      formatResponse(null, 'products', 'There are available products'),
+      formatResponse(null, 'products', `${process.env.MONGO_URL}`),
     );
 });
 
